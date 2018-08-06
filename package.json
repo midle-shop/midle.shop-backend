@@ -1,0 +1,27 @@
+{
+  "name": "midle.shop-backend",
+  "description": "Иackend for www.midle.shop",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./bin/www",
+  "author": "Alexander Ivannikov <alexander@midle.shop> (https://github.com/an-ivannikov)",
+  "homepage": "https://midle.shop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/midle-shop/midle.shop-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/midle-shop/midle.shop-backend/issues"
+  },
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+  }
+}
