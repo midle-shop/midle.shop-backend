@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ***
 
 ## [Unreleased]
+### Added
+- MIDLE Documents v0.0.1 RU in '/public/static/documents';
+
 ### Changed
 - Links in the Change log.
 
