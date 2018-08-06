@@ -9,5 +9,7 @@ http://semver.org/).
 ***
 
 ## Не выпущено
+
+## v0.0.1 - 2018-08-06
 ### Добавлено
-- Тестовый Backend с Web App.
+- Тестовый Backend с Web App (midle.shop-web-app v0.0.2).

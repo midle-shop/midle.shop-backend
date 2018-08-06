@@ -9,9 +9,14 @@ http://semver.org/).
 ***
 
 ## [Не выпущено]
+
+## v0.0.1 - 2018-08-06
 ### Добавлено
+- Интегрировано midle.shop-web-app v0.0.2;
+- Автоматический перезапуск в режиме разработки с помощью nodemon;
 - Backend (Инициация Backend с помощью
-[Express application generator](http://expressjs.com/starter/generator.html));
+[Express application generator](http://expressjs.com/starter/generator.html)):
+    - поддержка handlebars (hbs).
 - [Релизы](/releases);
 - [Журнал изменений](/changelog).
 
