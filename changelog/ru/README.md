@@ -9,10 +9,15 @@ http://semver.org/).
 ***
 
 ## [Не выпущено]
+
+## [v0.0.3] - 2018-08-06
 ### Добавлено
-- Документы MIDLE v0.0.1 RU в '/public/static/documents';
+- JSON-RPC on path '/api/jsonrpc';
+- Locales for midle.shop-web-app v0.0.1 в '/public/static/locales-mswa';
+- Документы MIDLE v0.0.1 RU в '/public/static/documents'.
 
 ### Изменено
+- midle.shop-web-app v0.0.3;
 - Сслыки в журнале изменений.
 
 ## [v0.0.2] - 2018-08-06
@@ -37,5 +42,6 @@ http://semver.org/).
 - [Релизы](/releases);
 - [Журнал изменений](/changelog).
 
-[Не выпущено]: https://github.com/midle-shop/midle.shop-backend/compare/v0.0.2...HEAD
+[Не выпущено]: https://github.com/midle-shop/midle.shop-backend/compare/v0.0.3...HEAD
+[v0.0.3]: https://github.com/midle-shop/midle.shop-backend/compare/v0.0.2...v0.0.3
 [v0.0.2]: https://github.com/midle-shop/midle.shop-backend/compare/v0.0.1...v0.0.2

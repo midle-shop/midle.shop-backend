@@ -1,0 +1,58 @@
+{
+  "project": "Проект",
+  "projectName": "MIDLE",
+  "slogan": "Цифровой роботизированный ритейлер на Blockchain",
+  "description": "Цифровой роботизированный ритейлер на Blockchain",
+  "getNewsletter": "Подключить новостную рассылку",
+  "menu": {
+    "home": "Главная",
+    "whitepaper": "Whitepaper",
+    "roadmap": "Дорожная карта",
+    "faq": "Вопросы-Ответы",
+    "blog": "Блог",
+    "newsletter": "Новостная рассылка"
+  },
+  "sidebar": {
+    "whitepaper": "Whitepaper",
+    "roadmap": "Дорожная карта",
+    "faq": "Вопросы-Ответы",
+    "blog": "Блог",
+
+    "newsletter": "Новостная рассылка"
+  },
+  "footer": {
+    "information": "Информация",
+    "purpose": "Цель",
+    "whitepaper": "Whitepaper",
+    "roadmap": "Дорожная карта",
+    "faq": "Вопросы-Ответы",
+    "blog": "Блог",
+    "team": "Команда",
+    "contacts": "Контакты",
+    "newsletter": "Новостная рассылка",
+
+    "careers": "Карьера",
+    "openVacancies": "Открытые вакансии",
+
+    "possibility": "Новые возможности",
+    "forUsers": "Для пользователей",
+    "forManufacturers": "Для производителей",
+    "forBusiness": "Для бизнеса",
+    "forInvestors": "Для инвесторов",
+
+    "copyright": "© MIDLE, 2018 г. Все права защищены.",
+
+    "privacyPolicy": "Политика конфиденциальности",
+    "useOfCookies": "Использование cookies",
+    "termsOfUse": "Условия использования",
+    "legal": "Юридическая информация",
+    "siteMap": "Карта сайта",
+
+    "socialNetworks": "Социальные сети"
+  },
+  "theme": {
+    "day": "Дневной режим",
+    "night": "Ночной режим"
+  },
+  "loading": "Загрузка"
+}

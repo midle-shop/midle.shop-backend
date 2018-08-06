@@ -1,7 +1,7 @@
 {
   "name": "midle.shop-backend",
   "description": "Backend for www.midle.shop",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "main": "./bin/www",
   "author": "Alexander Ivannikov <alexander@midle.shop> (https://github.com/an-ivannikov)",
