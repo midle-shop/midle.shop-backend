@@ -10,6 +10,18 @@ http://semver.org/).
 
 ## [Не выпущено]
 
+## [v0.0.2] - 2018-08-06
+### Добавлено
+- [Node-convict](https://www.npmjs.com/package/convict) для разделения
+настроек приложения в различных режимах работы;
+- [Helmet](https://www.npmjs.com/package/helmet) для повышения безопастности;
+- Простая программа для перенаправления HTTP запросов в режиме производства;
+- Промежуточный обработчик для перенаправления запросов HTTP на HTTPS,
+без www на www.
+
+### Удалено
+- Релизы '/releases'.
+
 ## v0.0.1 - 2018-08-06
 ### Добавлено
 - Интегрировано midle.shop-web-app v0.0.2;
@@ -20,4 +32,5 @@ http://semver.org/).
 - [Релизы](/releases);
 - [Журнал изменений](/changelog).
 
-[Не выпущено]: https://github.com/midle-shop/midle.shop-web-app/compare/v0.0.1...HEAD
+[Не выпущено]: https://github.com/midle-shop/midle.shop-web-app/compare/v0.0.2...HEAD
+[v0.0.2]: https://github.com/midle-shop/midle.shop-web-app/compare/v0.0.1...v0.0.2

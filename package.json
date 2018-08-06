@@ -1,7 +1,7 @@
 {
   "name": "midle.shop-backend",
   "description": "Backend for www.midle.shop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "main": "./bin/www",
   "author": "Alexander Ivannikov <alexander@midle.shop> (https://github.com/an-ivannikov)",
@@ -17,10 +17,12 @@
     "start": "SET DEBUG=backend:*&& nodemon ./bin/www"
   },
   "dependencies": {
+    "convict": "^4.3.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "hbs": "~4.0.1",
+    "helmet": "^3.13.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0"
   },

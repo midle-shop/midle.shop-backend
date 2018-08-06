@@ -1,90 +1,133 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
-var app = require('../app');
-var debug = require('debug')('backend:server');
+var debugHTTP = require('debug').debug('backend:serverHTTP');
+var debugHTTPS = require('debug').debug('backend:serverHTTPS');
+var path = require('path');
 var http = require('http');
+var https = require('https');
+var fs = require('fs');
+
+var config = require(path.join(__dirname, '../config'));
+var appRedirect = require(path.join(__dirname, '../app-redirect'));
+var app = require(path.join(__dirname, '../app'));
+
 
 /**
- * Get port from environment and store in Express.
+ * Get env, ip and port from environment and store in Express.
  */
+var env = config.get("env");
+appRedirect.set('env', env);
+app.set('env', env);
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+var httpPort = config.get("backend.http_port");
+var httpsPort = config.get("backend.https_port");
+appRedirect.set('port', httpPort);
+app.set('port', httpsPort);
+
+var httpsRedirect = config.get("backend.https_redirect");
+var wwwRedirect = config.get("backend.www_redirect");
+appRedirect.set('https_redirect', httpsRedirect);
+appRedirect.set('www_redirect', wwwRedirect);
+app.set('www_redirect', wwwRedirect);
+
+
+if (config.get("backend.secure_mode")) {
+  createHTTPServer(appRedirect);
+  createHTTPSServer(app);
+} else {
+  createHTTPServer(app);
+}
+
+
 
 /**
  * Create HTTP server.
  */
-
-var server = http.createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
+function createHTTPServer (app) {
+  var serverHTTP = http.createServer(app);
+  serverHTTP.listen(httpPort);
+  serverHTTP.on('error', onError({
+    debug: debugHTTP,
+    port: httpPort,
+  }));
+  serverHTTP.on('listening', onListening({
+    debug: debugHTTP,
+    address: serverHTTP.address(),
+  }));
 }
 
+
 /**
- * Event listener for HTTP server "error" event.
+ * Create HTTPS server.
  */
+function createHTTPSServer (app) {
+  const httpsOptions = {
+    key: fs.readFileSync(
+      path.join(__dirname, "../", config.get("backend.ssl.key"))
+    ),
+    cert: fs.readFileSync(
+      path.join(__dirname, "../", config.get("backend.ssl.cert"))
+    ),
+  };
 
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
+  var serverHTTPS = https.createServer(httpsOptions, app);
+  serverHTTPS.listen(httpsPort);
+  serverHTTPS.on('error', onError({
+    debug: debugHTTPS,
+    port: httpsPort,
+  }));
+  serverHTTPS.on('listening', onListening({
+    debug: debugHTTPS,
+    address: serverHTTPS.address(),
+  }));
+  return serverHTTPS;
+}
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
+/**
+ * Event listener for server "error" event.
+ */
+function onError(options) {
+  var debug = options.debug;
+
+  return function (error) {
+    if (error.syscall !== 'listen') {
       throw error;
+    }
+
+    var bind = typeof options.port === 'string'
+      ? 'Pipe ' + options.port
+      : 'Port ' + options.port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+      case 'EACCES':
+        debug(bind + ' requires elevated privileges');
+        console.error(bind + ' requires elevated privileges');
+        process.exit(1);
+        break;
+      case 'EADDRINUSE':
+        debug(bind + ' is already in use');
+        console.error(bind + ' is already in use');
+        process.exit(1);
+        break;
+      default:
+        throw error;
+    }
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
 
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+/**
+ * Event listener for server "listening" event.
+ */
+function onListening(options) {
+  var debug = options.debug;
+
+  return function () {
+    var bind = typeof options.address === 'object'
+      ? 'port ' + options.address.port
+      : 'pipe ' + options.address;
+    debug('Listening on ' + bind);
+  }
 }
