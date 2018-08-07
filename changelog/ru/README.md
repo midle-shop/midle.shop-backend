@@ -9,6 +9,8 @@ http://semver.org/).
 ***
 
 ## [Не выпущено]
+### Добавлено
+- [nodemailer](https://www.npmjs.com/package/nodemailer).
 
 ## [v0.0.3] - 2018-08-06
 ### Добавлено

@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ***
 
 ## [Unreleased]
+### Added
+- [nodemailer](https://www.npmjs.com/package/nodemailer).
 
 ## [v0.0.3] - 2018-08-06
 ### Added

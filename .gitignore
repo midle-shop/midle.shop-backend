@@ -1,4 +1,5 @@
 # config files
+config/data/development/*
 config/data/production/*
 
 # Logs
