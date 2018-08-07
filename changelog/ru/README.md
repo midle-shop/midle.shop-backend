@@ -12,6 +12,9 @@ http://semver.org/).
 ### Добавлено
 - [nodemailer](https://www.npmjs.com/package/nodemailer).
 
+### Удалено
+- Сокрытие фалов настроек для режима разработки '/config/data/development/'. 
+
 ## [v0.0.3] - 2018-08-06
 ### Добавлено
 - JSON-RPC on path '/api/jsonrpc';
