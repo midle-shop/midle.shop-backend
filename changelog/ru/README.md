@@ -10,10 +10,11 @@ http://semver.org/).
 
 ## [Не выпущено]
 ### Добавлено
+- Mailer for "noreply" accaunt;
 - [nodemailer](https://www.npmjs.com/package/nodemailer).
 
 ### Удалено
-- Сокрытие фалов настроек для режима разработки '/config/data/development/'. 
+- Сокрытие фалов настроек для режима разработки '/config/data/development/'.
 
 ## [v0.0.3] - 2018-08-06
 ### Добавлено

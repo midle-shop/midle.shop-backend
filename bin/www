@@ -8,9 +8,13 @@ var https = require('https');
 var fs = require('fs');
 
 var config = require(path.join(__dirname, '../config'));
+const db = require(path.join(__dirname, '../../db-midle-shop'));
+db.connect();
+
 var appRedirect = require(path.join(__dirname, '../app-redirect'));
 var app = require(path.join(__dirname, '../app'));
 
+var mailerNoReply = require(path.join(__dirname, '../mailer/noreply'));
 
 /**
  * Get env, ip and port from environment and store in Express.

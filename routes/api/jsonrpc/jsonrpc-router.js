@@ -28,7 +28,7 @@ router.post('/', function(req, res, next) {
 });
 
 
-router.post('/', function(req, res, next) {
+router.post('/', function(req, res) {
   var response = { jsonrpc: "2.0", result: undefined, error: undefined, id: null };
   return JSONRPC(req.body)
   .then((result) => {

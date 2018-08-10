@@ -9,10 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Mailer for "noreply" accaunt;
 - [nodemailer](https://www.npmjs.com/package/nodemailer).
 
 ### Removed
-- Hiding config files for development mode '/config/data/development/'. 
+- Hiding config files for development mode '/config/data/development/'.
 
 ## [v0.0.3] - 2018-08-06
 ### Added

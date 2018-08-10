@@ -1,13 +1,15 @@
-var path = require('path');
 
 // Define a schema
-
 var schema = {
   env: {
     doc: "The application environment.",
     format: ["production", "development", "test"],
     default: "development",
     env: "NODE_ENV",
+  },
+  language: {
+    default: { doc: "Default language", format: String, default: "ru" },
+    list: { doc: "Languages", format: Array, default: [ "ru" ] },
   },
 
   backend: {
@@ -60,6 +62,24 @@ var schema = {
       }
     }
   },
+
+  mailer: {
+    noreply: {
+      from: {
+        doc: "Sender address",
+        format: String,
+        default: "No Reply MIDLE <noreply@midle.shop>",
+      },
+      host: { doc: "SMTP server", format: String, default: "" },
+      port: { doc: "SMTP port", format: "port", default: 465 },
+      secure: { doc: "Mode", format: Boolean, default: true },
+      auth: {
+        user: { doc: "Username", format: String, default: "" },
+        pass: { doc: "Password", format: String, default: "" },
+      }
+    }
+  },
+
 };
 
 module.exports = schema;
